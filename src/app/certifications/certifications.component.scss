@@ -1,26 +1,27 @@
-/* General Styles */
+/* Certifications Section Styles */
 .certifications-section {
     padding: 4rem 2rem;
     background-color: #f9f9f9;
     text-align: center;
-  }
-  
-  h1 {
+    width: 100%; /* Ensure it takes full width */
+}
+
+h1 {
     font-size: 3rem;
     color: #333;
     margin-bottom: 3rem;
     font-weight: 600;
-  }
-  
-  /* Certifications Grid */
-  .certifications-grid {
+}
+
+/* Certifications Grid */
+.certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: 1fr; /* Changed to one column layout */
     gap: 2rem;
-  }
-  
-  /* Certification Card */
-  .certification-card {
+}
+
+/* Certification Card */
+.certification-card {
     background-color: white;
     border-radius: 10px;
     padding: 2rem;
@@ -29,67 +30,67 @@
     align-items: center;
     gap: 1.5rem;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .certification-card:hover {
+    margin-bottom: 1rem; /* Added margin to create space between cards */
+}
+
+.certification-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  /* Certification Logo */
-  .certification-logo img {
+}
+
+/* Certification Logo */
+.certification-logo img {
     width: 80px;
     height: 80px;
     object-fit: cover;
     border-radius: 50%;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Certification Details */
-  .certification-details {
+}
+
+/* Certification Details */
+.certification-details {
     text-align: left;
-  }
-  
-  .certification-details h2 {
+}
+
+.certification-details h2 {
     font-size: 1.5rem;
     color: #7d57ff;
     margin-bottom: 0.5rem;
-  }
-  
-  .certification-details p {
+}
+
+.certification-details p {
     font-size: 1rem;
     color: #777;
     margin-bottom: 0.5rem;
-  }
-  
-  /* Certification Link */
-  .cert-link {
+}
+
+/* Certification Link */
+.cert-link {
     font-weight: 600;
     color: #7d57ff;
     text-decoration: none;
     transition: color 0.3s ease;
-  }
-  
-  .cert-link:hover {
+}
+
+.cert-link:hover {
     color: #4e38cc;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .certifications-grid {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr; /* Ensures mobile view stays single column */
     }
-  
+
     h1 {
       font-size: 2.5rem;
     }
-  
+
     .certification-card {
       padding: 1.5rem;
     }
-  
+
     .certification-details h2 {
       font-size: 1.25rem;
     }
-  }
-  
+}

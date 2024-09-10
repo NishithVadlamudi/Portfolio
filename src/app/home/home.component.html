@@ -1,12 +1,21 @@
-<!-- home.component.html -->
-<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
 <div class="hero-section">
   <div class="hero-content">
-    <h1>Welcome to Nishith Vadlamudi's Portfolio</h1>
+    <!-- Profile Image next to Portfolio Title -->
+    <div class="portfolio-intro">
+      <img src="assets/profile-image.png" alt="Profile Logo" class="profile-logo" />
+      <h1>Welcome to Nishith Vadlamudi's Portfolio</h1>
+    </div>
     <p>Full-Stack Developer | Cloud Enthusiast | AI & Machine Learning Enthusiast</p>
-    <a href="#projects" class="cta-button">View My Projects</a>
+    
+    <!-- Download Resume Button -->
+    <a href="assets/Nishith_Vadlamudi_Resume.pdf" download class="cta-button">
+      <i class="fas fa-file-download"></i> Download my Resume
+    </a>
   </div>
+
   <div class="scroll-down-icon">
     <a href="#about"><i class="fas fa-chevron-down"></i></a>
   </div>
@@ -14,14 +23,31 @@
 
 <!-- About Section or Other Content -->
 <div id="about" class="about-section">
-  <h2>About Me</h2>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-
-  <!-- Social Media Links -->
-  <div class="social-icons">
-    <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-    <a href="https://twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-    <a href="https://youtube.com" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-    <a href="https://github.com" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+  <h2>Who Am I?</h2>
+  
+  <!-- Quirky Introduction -->
+  <p class="intro-text">
+    Imagine a world where full-stack developers could talk to machines in their sleep—well, that's me! When I'm not writing elegant code, I'm probably brewing the perfect cup of coffee or binge-watching AI documentaries. 🚀
+  </p>
+  
+  <!-- Fun Facts with Icons -->
+  <div class="fun-facts">
+    <div class="fact-card">
+      <i class="fas fa-laptop-code"></i>
+      <p>Pro in Java & Spring Boot</p>
+    </div>
+    <div class="fact-card">
+      <i class="fas fa-coffee"></i>
+      <p>Code fueled by coffee ☕</p>
+    </div>
+    <div class="fact-card">
+      <i class="fas fa-robot"></i>
+      <p>ML Enthusiast & AI Dreamer 🤖</p>
+    </div>
+    <div class="fact-card">
+      <i class="fas fa-rocket"></i>
+      <p>Always ready for new challenges 🚀</p>
+    </div>
   </div>
+  <p class="quote">"Keep calm and let the code flow!"</p>
 </div>

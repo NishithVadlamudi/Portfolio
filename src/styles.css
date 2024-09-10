@@ -1,89 +1,100 @@
 /* General Styles */
+/* General Styles */
 html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
-    padding-top: 70px;
+    padding-top: 70px; /* Padding to account for fixed navbar */
     font-family: 'Inter', sans-serif;
     background-color: #f4f4f4;
     scroll-behavior: smooth;
-  }
-  
-  * {
+    display: flex;  /* Make body a flex container */
+    flex-direction: column; /* Flexbox to control layout direction */
+    min-height: 100vh; /* Ensure body stretches to full viewport height */
+}
+
+main {
+    flex: 1; /* Main content will take remaining space, pushing footer down */
+}
+
+* {
     box-sizing: border-box;
-  }
-  
-  /* Typography */
-  h1, h2, h3, h4, h5, h6 {
+}
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
     color: #333;
-  }
-  
-  p {
+}
+
+p {
     font-weight: 400;
     color: #666;
     max-width: 600px;
     margin: 0 auto 1rem;
     font-size: 1.125rem;
-  }
-  
-  a {
+}
+
+a {
     text-decoration: none;
     color: inherit;
     transition: color 0.3s ease;
-  }
-  
-  /* Navbar */
-  .navbar {
+}
+
+/* Navbar */
+.navbar {
     position: fixed;
     top: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.95); /* Slight transparency */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 1rem 2rem;
     z-index: 1000;
     transition: background-color 0.3s ease;
-  }
-  
-  .navbar.scrolled {
+}
+
+.navbar.scrolled {
     background-color: rgba(255, 255, 255, 1);
-  }
-  
-  .navbar .logo {
+}
+
+.navbar .logo {
     display: flex;
     align-items: center;
-  }
-  
-  .navbar .logo img {
+}
+
+.navbar .logo img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 1rem;
-  }
-  
-  .navbar nav ul {
+}
+
+.navbar nav ul {
     list-style: none;
     display: flex;
     gap: 2rem;
-  }
-  
-  .navbar nav ul li a {
+}
+
+.navbar nav ul li a {
     font-size: 1.125rem;
     font-weight: 500;
     color: #333;
     border-bottom: 2px solid transparent;
     transition: color 0.3s ease, border-bottom 0.3s ease;
-  }
-  
-  .navbar nav ul li a:hover {
+}
+
+.navbar nav ul li a:hover {
     color: #7d57ff;
     border-bottom: 2px solid #7d57ff;
-  }
-  
-  /* Social Media Sidebar */
-  .social-sidebar {
+}
+.navbar nav ul li a.active {
+    color: #7d57ff; /* Active link text color */
+    border-bottom: 2px solid #7d57ff; /* Active link underline */
+}
+/* Social Media Sidebar */
+.social-sidebar {
     position: fixed;
     top: 50%;
     left: 0;
@@ -95,21 +106,22 @@ html, body {
     padding: 1rem;
     border-radius: 0 8px 8px 0;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .social-sidebar a {
+    z-index: 1001;
+}
+
+.social-sidebar a {
     color: #333;
     font-size: 1.5rem;
     transition: transform 0.3s ease, color 0.3s ease;
-  }
-  
-  .social-sidebar a:hover {
+}
+
+.social-sidebar a:hover {
     color: #7d57ff;
     transform: scale(1.2);
-  }
-  
-  /* Hero Section */
-  .hero-section {
+}
+
+/* Hero Section */
+.hero-section {
     z-index: 1;
     height: 100vh;
     display: flex;
@@ -118,23 +130,23 @@ html, body {
     background: linear-gradient(to right, #7d57ff, #64b6ff);
     text-align: center;
     color: white;
-  }
-  
-  .hero-content h1 {
+}
+
+.hero-content h1 {
     font-size: 4rem;
     font-weight: 700;
     margin-bottom: 1rem;
     animation: fadeInDown 1s ease-in-out;
-  }
-  
-  .hero-content p {
+}
+
+.hero-content p {
     font-size: 1.5rem;
     font-weight: 300;
     margin-bottom: 2rem;
     animation: fadeInUp 1s ease-in-out;
-  }
-  
-  .cta-button {
+}
+
+.cta-button {
     background-color: white;
     color: #7d57ff;
     padding: 1rem 2rem;
@@ -142,66 +154,66 @@ html, body {
     text-decoration: none;
     font-size: 1.25rem;
     transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .cta-button:hover {
+}
+
+.cta-button:hover {
     background-color: #fff0f5;
     transform: translateY(-5px);
-  }
-  
-  /* Fade-in animations */
-  @keyframes fadeInDown {
+}
+
+/* Fade-in animations */
+@keyframes fadeInDown {
     from {
-      opacity: 0;
-      transform: translateY(-50px);
+        opacity: 0;
+        transform: translateY(-50px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  @keyframes fadeInUp {
+}
+
+@keyframes fadeInUp {
     from {
-      opacity: 0;
-      transform: translateY(50px);
+        opacity: 0;
+        transform: translateY(50px);
     }
     to {
-      opacity: 1;
-      transform: translateY(0);
+        opacity: 1;
+        transform: translateY(0);
     }
-  }
-  
-  /* Full-Page Sections */
-  .full-page-section {
+}
+
+/* Full-Page Sections */
+.full-page-section {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #f9f9f9;
     padding: 4rem 2rem;
-  }
-  
-  .full-page-section:nth-child(even) {
+}
+
+.full-page-section:nth-child(even) {
     background-color: #ececec;
-  }
-  
-  .section-title {
+}
+
+.section-title {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
     color: #333;
     text-align: center;
-  }
-  
-  .section-content {
+}
+
+.section-content {
     max-width: 800px;
     margin: 0 auto;
     text-align: center;
-  }
-  
-  /* Scroll Down Icon */
-  .scroll-down-icon {
+}
+
+/* Scroll Down Icon */
+.scroll-down-icon {
     position: absolute;
     bottom: 20px;
     left: 50%;
@@ -209,43 +221,76 @@ html, body {
     font-size: 2rem;
     color: #333;
     animation: bounce 2s infinite;
-  }
-  
-  .scroll-down-icon a {
+}
+
+.scroll-down-icon a {
     text-decoration: none;
     color: inherit;
-  }
-  
-  /* Bounce Animation */
-  @keyframes bounce {
+}
+
+/* Bounce Animation */
+@keyframes bounce {
     0%, 20%, 50%, 80%, 100% {
-      transform: translateY(0);
+        transform: translateY(0);
     }
     40% {
-      transform: translateY(-10px);
+        transform: translateY(-10px);
     }
     60% {
-      transform: translateY(-5px);
+        transform: translateY(-5px);
     }
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .navbar nav ul {
-      flex-direction: column;
-      gap: 1rem;
+        flex-direction: column;
+        gap: 1rem;
     }
-  
+
     .hero-content h1 {
-      font-size: 3rem;
+        font-size: 3rem;
     }
-  
+
     .hero-content p {
-      font-size: 1.25rem;
+        font-size: 1.25rem;
     }
-  
+
     .cta-button {
-      font-size: 1rem;
+        font-size: 1rem;
     }
-  }
-  
+}
+
+/* Footer Styles */
+/* Footer Styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    width: 100%;
+    position: relative;
+    left: 0;
+    margin-top: auto; /* This ensures the footer is pushed to the bottom */
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.footer-nav {
+    margin-top: 1rem;
+}
+
+.footer-nav a {
+    margin: 0 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: #7d57ff;
+}

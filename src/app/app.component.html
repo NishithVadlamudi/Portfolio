@@ -1,29 +1,30 @@
 <!-- Navbar -->
-<!-- Navbar -->
 <header class="navbar">
-  <div class="logo">
-    <img src="assets/profile-image.png" alt="Profile Logo" />
-    <span>Nishith Vadlamudi</span>
-  </div>
   <nav>
     <ul>
-      <li><a routerLink="/" routerLinkActive="active">Home</a></li>
+      <li><a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a></li>
       <li><a routerLink="/experience" routerLinkActive="active">Experience</a></li>
       <li><a routerLink="/certifications" routerLinkActive="active">Certifications</a></li>
       <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
       <li><a routerLink="/skills" routerLinkActive="active">Skills</a></li>
     </ul>
-  </nav>
+  </nav>  
 </header>
-
 
 <!-- Social Media Sidebar -->
 <div class="social-sidebar">
-  <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
-  <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-  <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-  <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+  <a href="https://linkedin.com/in/nishith-vadlamudi" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+  <a href="https://www.instagram.com/nishith_vadlamudi" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+  <a href="mailto:nishith.vadlamudi@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+  <a href="https://github.com/NishithVadlamudi" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
 </div>
 
 <!-- Router Outlet -->
-<router-outlet></router-outlet>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer class="footer">
+  <div class="footer-content">
+    <p>&copy; 2024 Nishith Vadlamudi. All rights reserved.</p>
+  </div>
+</footer>

@@ -1,8 +1,9 @@
-/* General Styles */
+/* Projects Component Styles */
 .projects-section {
   padding: 4rem 2rem;
   background-color: #f9f9f9;
   text-align: center;
+  width: 100%; /* Ensure it takes full width */
 }
 
 h1 {
@@ -15,7 +16,7 @@ h1 {
 /* Projects Grid */
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr; /* Changed to one column layout */
   gap: 2rem;
 }
 
@@ -26,6 +27,7 @@ h1 {
   padding: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 1rem; /* Added margin to create space between cards */
 }
 
 .project-card:hover {
@@ -85,7 +87,7 @@ h1 {
 /* Responsive Design */
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Ensures mobile view also stays single column */
   }
 
   h1 {
