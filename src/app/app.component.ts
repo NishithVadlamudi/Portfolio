@@ -6,6 +6,8 @@ import { Component, ViewChild, ElementRef } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  isDarkTheme = false;
+
 
   // Accessing the different sections
   @ViewChild('aboutSection', { static: false }) aboutSection!: ElementRef;
@@ -26,6 +28,15 @@ export class AppComponent {
 
     if (element) {
       element.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+  
+  toggleTheme() {
+    this.isDarkTheme = !this.isDarkTheme;
+    if (this.isDarkTheme) {
+      document.body.classList.add('dark-theme');
+    } else {
+      document.body.classList.remove('dark-theme');
     }
   }
 }

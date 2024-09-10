@@ -144,3 +144,20 @@
     margin-top: 2rem;
     font-style: italic;
 }
+/* Dark Theme */
+body.dark-theme {
+    --bg-color: #1a1a1a; /* Softer dark background */
+    --text-color: #e0e0e0; /* Lighter text for better readability */
+    --sidebar-bg: #2b2b2b;
+    --section-bg: #242424; /* Slightly lighter section background */
+    --section-bg-alt: #3a3a3a; /* Alternating background for sections */
+}
+
+/* Light Theme */
+body {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --sidebar-bg: #ffffff;
+    --section-bg: #f9f9f9;
+    --section-bg-alt: #ececec;
+}

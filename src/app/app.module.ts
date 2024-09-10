@@ -18,12 +18,14 @@ import { ExperienceComponent } from './experience/experience.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { TechnicalSkillsComponent } from './technical-skills/technical-skills.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
-import { provideHttpClient, withFetch } from '@angular/common/http';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { CertificationsComponent } from './certifications/certifications.component';
+import { ChatbotComponent } from './chatbot/chatbot.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,6 +38,7 @@ import { CertificationsComponent } from './certifications/certifications.compone
     ContactComponent,
     HomeComponent,
     CertificationsComponent,
+    ChatbotComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,9 @@ import { CertificationsComponent } from './certifications/certifications.compone
     MatCardModule,
     MatListModule,
     MatExpansionModule,
-    MatChipsModule
+    MatChipsModule,
+    HttpClientModule,FormsModule,
+
   ],
   providers: [
     provideAnimationsAsync(),

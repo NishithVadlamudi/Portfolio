@@ -1,12 +1,12 @@
 /* General Styles */
-/* General Styles */
 html, body {
     height: 100%;
     margin: 0;
     padding: 0;
     padding-top: 70px; /* Padding to account for fixed navbar */
     font-family: 'Inter', sans-serif;
-    background-color: #f4f4f4;
+    background-color: var(--bg-color); /* Use CSS variable for dynamic theme */
+    color: var(--text-color); /* Use CSS variable for dynamic text color */
     scroll-behavior: smooth;
     display: flex;  /* Make body a flex container */
     flex-direction: column; /* Flexbox to control layout direction */
@@ -20,15 +20,16 @@ main {
 * {
     box-sizing: border-box;
 }
+
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     font-weight: 600;
-    color: #333;
+    color: var(--text-color); /* Dynamic text color */
 }
 
 p {
     font-weight: 400;
-    color: #666;
+    color: var(--text-color); /* Dynamic text color */
     max-width: 600px;
     margin: 0 auto 1rem;
     font-size: 1.125rem;
@@ -45,7 +46,7 @@ a {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.95); /* Slight transparency */
+    background-color: var(--navbar-bg); /* Dynamic background color */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     display: flex;
     justify-content: center;
@@ -56,19 +57,7 @@ a {
 }
 
 .navbar.scrolled {
-    background-color: rgba(255, 255, 255, 1);
-}
-
-.navbar .logo {
-    display: flex;
-    align-items: center;
-}
-
-.navbar .logo img {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    margin-right: 1rem;
+    background-color: var(--navbar-bg);
 }
 
 .navbar nav ul {
@@ -80,7 +69,7 @@ a {
 .navbar nav ul li a {
     font-size: 1.125rem;
     font-weight: 500;
-    color: #333;
+    color: var(--navbar-text-color); /* Use dynamic text color */
     border-bottom: 2px solid transparent;
     transition: color 0.3s ease, border-bottom 0.3s ease;
 }
@@ -89,10 +78,12 @@ a {
     color: #7d57ff;
     border-bottom: 2px solid #7d57ff;
 }
+
 .navbar nav ul li a.active {
     color: #7d57ff; /* Active link text color */
     border-bottom: 2px solid #7d57ff; /* Active link underline */
 }
+
 /* Social Media Sidebar */
 .social-sidebar {
     position: fixed;
@@ -102,7 +93,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    background-color: #fff;
+    background-color: var(--sidebar-bg); /* Dynamic background */
     padding: 1rem;
     border-radius: 0 8px 8px 0;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.1);
@@ -110,7 +101,7 @@ a {
 }
 
 .social-sidebar a {
-    color: #333;
+    color: var(--text-color); /* Dynamic text color */
     font-size: 1.5rem;
     transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -190,19 +181,19 @@ a {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #f9f9f9;
+    background-color: var(--section-bg); /* Dynamic background color */
     padding: 4rem 2rem;
 }
 
 .full-page-section:nth-child(even) {
-    background-color: #ececec;
+    background-color: var(--section-bg-alt); /* Alternating section color */
 }
 
 .section-title {
     font-size: 2.5rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #333;
+    color: var(--text-color); /* Dynamic text color */
     text-align: center;
 }
 
@@ -219,7 +210,7 @@ a {
     left: 50%;
     transform: translateX(-50%);
     font-size: 2rem;
-    color: #333;
+    color: var(--text-color); /* Dynamic text color */
     animation: bounce 2s infinite;
 }
 
@@ -239,6 +230,24 @@ a {
     60% {
         transform: translateY(-5px);
     }
+}
+
+/* Theme Toggle Button */
+.theme-toggle-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 0.75rem 1.5rem;
+    background-color: #7d57ff;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: #6241cc;
 }
 
 /* Responsive Design */
@@ -262,16 +271,15 @@ a {
 }
 
 /* Footer Styles */
-/* Footer Styles */
 .footer {
-    background-color: #333;
+    background-color: #908989;
     color: white;
     text-align: center;
     padding: 2rem 0;
     width: 100%;
     position: relative;
     left: 0;
-    margin-top: auto; /* This ensures the footer is pushed to the bottom */
+    margin-top: auto;
 }
 
 .footer p {
@@ -279,18 +287,24 @@ a {
     font-size: 1rem;
 }
 
-.footer-nav {
-    margin-top: 1rem;
+/* Dark Theme */
+body.dark-theme {
+    --bg-color: #121212;
+    --text-color: #f4f4f4;
+    --sidebar-bg: #1c1c1c;
+    --section-bg: #1e1e1e;
+    --section-bg-alt: #2a2a2a;
+    --navbar-bg: #1c1c1c; /* Dark background for navbar */
+    --navbar-text-color: #f4f4f4; /* Light text for navbar */
 }
 
-.footer-nav a {
-    margin: 0 1rem;
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-.footer-nav a:hover {
-    color: #7d57ff;
+/* Light Theme */
+body {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --sidebar-bg: #ffffff;
+    --section-bg: #f9f9f9;
+    --section-bg-alt: #ececec;
+    --navbar-bg: rgba(255, 255, 255, 0.95); /* Light background for navbar */
+    --navbar-text-color: #333333; /* Dark text for navbar */
 }
