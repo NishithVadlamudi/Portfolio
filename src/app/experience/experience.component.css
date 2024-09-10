@@ -1,0 +1,85 @@
+/* General Styles */
+.experience-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 3rem;
+  font-weight: 600;
+}
+
+/* Experience Card */
+.experience-card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.experience-header h2 {
+  font-size: 1.75rem;
+  color: #7d57ff;
+  margin-bottom: 0.5rem;
+}
+
+.experience-header p {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+
+/* Experience Details */
+.experience-details {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.experience-details li {
+  font-size: 1.125rem;
+  color: #333;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.experience-details li i {
+  font-size: 1.25rem;
+  color: #7d57ff;
+  margin-right: 1rem;
+}
+
+.experience-details li:hover i {
+  color: #4e38cc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .experience-card {
+    padding: 1.5rem;
+  }
+
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .experience-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .experience-details li {
+    font-size: 1rem;
+  }
+}

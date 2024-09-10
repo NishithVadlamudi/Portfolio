@@ -1,10 +1,31 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'Portfolio';
+
+  // Accessing the different sections
+  @ViewChild('aboutSection', { static: false }) aboutSection!: ElementRef;
+  @ViewChild('projectsSection', { static: false }) projectsSection!: ElementRef;
+  @ViewChild('contactSection', { static: false }) contactSection!: ElementRef;
+
+  // Scroll to the respective section
+  scrollToSection(section: string) {
+    let element: ElementRef | undefined;
+    
+    if (section === 'aboutSection') {
+      element = this.aboutSection;
+    } else if (section === 'projectsSection') {
+      element = this.projectsSection;
+    } else if (section === 'contactSection') {
+      element = this.contactSection;
+    }
+
+    if (element) {
+      element.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
 }

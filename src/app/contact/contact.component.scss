@@ -1,0 +1,30 @@
+/* contact.component.scss */
+.full-page-content {
+    background-color: #1a1a1a;
+  }
+  
+  .contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .button-primary, .button-secondary {
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button-primary:hover {
+    background-color: #e0306f;
+  }
+  
+  .button-secondary {
+    background-color: #ffffff;
+    color: #ff4081;
+  }
+  
+  .button-secondary:hover {
+    background-color: #f7f7f7;
+  }
+  
